@@ -1,4 +1,3 @@
-# Jenkinsfile
 node{
     def project = 'leju-gcp'
     def appName = 'ithome'
