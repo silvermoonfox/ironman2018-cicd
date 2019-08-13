@@ -3,7 +3,7 @@ node{
     def project = 'leju-gcp'
     def appName = 'ithome'
     def tag = "v_${env.BUILD_NUMBER}"
-    def img = "asia.gcr.io/${project}/${appName}-${env.BRANCH_NAME}"
+    def img = "gcr.io/${project}/${appName}-${env.BRANCH_NAME}"
     def imgWithTag = "${img}:${tag}"
     
     checkout scm
@@ -14,5 +14,4 @@ node{
     stage '放置映像檔'
     sh("gcloud docker -- push ${imgWithTag} ")
 }
-
 
